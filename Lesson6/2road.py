@@ -1,6 +1,6 @@
 class Road:
-    _length = float(input('Enter road length (meters): '))   # meters
-    _width = float(input('Enter road width (meters):' ))  # meters
+    _length = float(input('Enter road length (meters): '))  # meters
+    _width = float(input('Enter road width (meters): '))  # meters
 
     def asphalt_calc(self):
         asp_mass = 0.025  # tons
