@@ -1,0 +1,9 @@
+Basenko 300000
+Kirillov 19000
+Petrov 150000
+Menshov 40000
+Gordeev 8000
+Popchenkov 70000
+Ivanov 50000
+Radulov 15000
+Marchenko 14000

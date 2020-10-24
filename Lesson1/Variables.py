@@ -1,0 +1,7 @@
+print("Welcome to our database.")
+print("Tell about yourself.")
+user_name = input("What is your name? ")
+user_age = int(input("How old are you? "))
+user_location = input("Where do you live? ")
+print("Thanks!")
+print(f"Your name is {user_name}, your age - {user_age} years, you living in {user_location} city!")
