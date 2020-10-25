@@ -12,14 +12,15 @@ class Worker:
 
 class Position(Worker):
     def get_full_name(self):
-        return f'Workers full name is {self.name} {self.surname}'
+        return f'Workers full name is {self.name} {self.surname}.'
 
     def get_total_income(self):
         for pos in self._income:
             if self.position in pos:
                 for salary in pos.values():
-                    return salary.get('Wage') + salary.get('Bonus')
-        return "There is no such position in the company!"
+                    return f"The worker total income in {self.position} position" \
+                           f" - {salary.get('Wage') + salary.get('Bonus')}."
+        return "There is no such position!"
 
 
 a = Position(input('Enter Worker name: ').title(),
