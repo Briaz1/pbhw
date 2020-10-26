@@ -1,32 +1,24 @@
-from time import sleep
+from time import sleep, time
 
 
 class TrafficLight:
-    _color = {'Red': 7, 'Yellow': 2, 'Green': 12}
+    color = {'Red': 7, 'Yellow': 2, 'Green': 10}
 
-    def running(self):
-        while True:
-            for colors in self._color:
-                print(colors)
-                sleep(self._color.get(colors))
+    def running(self, work_time):
+        start = time()
+        m = 0
+        while time() < start + work_time:
+            for colors in self.color:
+                m += 1
+                if time() > start + work_time:
+                    break
+                print(f"{m}: {colors}")
+                sleep(self.color.get(colors))
 
 
-TrafficLight().running()
-
-
-# from time import sleep, time
-#
-#
-# class TrafficLight:
-#     _color = {'Red': 7, 'Yellow': 2, 'Green': 12}
-#
-#     def running(self, work_time):
-#         start = time()
-#         while time() < start + work_time:
-#             for colors in self._color:
-#                 print(colors)
-#                 sleep(self._color.get(colors))
-#
-#
-# t = TrafficLight()
-# t.running(float(input("Enter (in sec) how long will traffic lights run: ")))
+while True:
+    try:
+        tr = TrafficLight()
+        tr.running(int(input("How time(sec) traffic light must work?: ")))
+    except ValueError:
+        continue
