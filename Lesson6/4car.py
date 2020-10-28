@@ -1,9 +1,10 @@
 class Car:
 
-    def __init__(self, name, speed, color):
+    def __init__(self, name, speed, color, is_police=False):
         self.name = name
         self.speed = speed
         self.color = color
+        self.is_police = is_police
 
     def go(self):
         return f'{self.name} start.'
@@ -20,20 +21,15 @@ class Car:
 
 class PoliceCar(Car):
     def __init__(self, name, speed, color, is_police=True):
-        super().__init__(name, speed, color)
+        super().__init__(name, speed, color, is_police)
         self.is_police = is_police
 
 
 class SportCar(Car):
-    def __init__(self, name, speed, color, is_police=False):
-        super().__init__(name, speed, color)
-        self.is_police = is_police
+    pass
 
 
 class TownCar(Car):
-    def __init__(self, name, speed, color, is_police=False):
-        super().__init__(name, speed, color)
-        self.is_police = is_police
 
     def show_speed(self):
         if self.speed > 60:
@@ -43,9 +39,6 @@ class TownCar(Car):
 
 
 class WorkCar(Car):
-    def __init__(self, name, speed, color, is_police=False):
-        super().__init__(name, speed, color)
-        self.is_police = is_police
 
     def show_speed(self):
         if self.speed > 40:
